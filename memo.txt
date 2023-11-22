@@ -1,0 +1,4 @@
+直前のコミットに含める
+git commit --amend --no-edit
+直前のコミット取り消し
+git reset --soft HEAD^
