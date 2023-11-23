@@ -3,6 +3,7 @@ import counterReducer from "../features/basic/counter/counterSlice"
 import taskBasicReducer from "../features/basic/task_basic/taskBasicSlice"
 import fetchBasicReducer from "../features/basic/fetch_basic/fetchBasicSlice"
 import loginReducer from "../features/login/loginSlice"
+import taskReducer from "../features/task/taskSlice"
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     taskBasic: taskBasicReducer,
     fetchBasic: fetchBasicReducer,
     login: loginReducer,
+    task: taskReducer,
   },
 })
 
