@@ -1,13 +1,21 @@
-import "./App.css"
+import React from "react"
+import styles from "./App.module.css"
 
-import Basic from "./features/basic/Basic"
+import { FaSignInAlt } from "react-icons/fa"
 
 function App() {
+  const Logout = () => {
+    localStorage.removeItem("localJWT")
+    window.location.href = "/"
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <Basic />
-      </header>
+    <div className={styles.containerTasks}>
+      <div className={styles.appTasks}>
+        <button onClick={Logout} className={styles.signBtn}>
+          <FaSignInAlt />
+        </button>
+      </div>
+      <div className={styles.appDetails}></div>
     </div>
   )
 }
