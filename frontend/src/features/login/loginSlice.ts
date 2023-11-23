@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store"
 import axios from "axios"
 
-const apiUrl = "http://localhost:5173/"
+const apiUrl = "http://localhost:8000/"
 const token = localStorage.localJWT
 
 export interface loginState {
@@ -24,7 +24,7 @@ const initialState: loginState = {
 export const fetchAsyncLogin = createAsyncThunk(
   "login/post",
   async (auth: any) => {
-    const response = await axios.post(`${apiUrl}authen/jwt/create`, auth, {
+    const response = await axios.post(`${apiUrl}auth/jwt/create`, auth, {
       headers: { "Content-Type": "application/json" },
     })
 
@@ -35,7 +35,7 @@ export const fetchAsyncLogin = createAsyncThunk(
 export const fetchAsyncRegister = createAsyncThunk(
   "login/register",
   async (auth: any) => {
-    const response = await axios.post(`${apiUrl}api/register`, auth, {
+    const response = await axios.post(`${apiUrl}api/register/`, auth, {
       headers: { "Content-Type": "application/json" },
     })
 
@@ -46,7 +46,7 @@ export const fetchAsyncRegister = createAsyncThunk(
 export const fetchAsyncProf = createAsyncThunk(
   "login/get",
   async (auth: any) => {
-    const response = await axios.get(`${apiUrl}api/myself`, {
+    const response = await axios.get(`${apiUrl}api/myself/`, {
       headers: { Authorization: `JWT ${token}` },
     })
 
