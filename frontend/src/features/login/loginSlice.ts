@@ -43,16 +43,13 @@ export const fetchAsyncRegister = createAsyncThunk(
   },
 )
 
-export const fetchAsyncProf = createAsyncThunk(
-  "login/get",
-  async (auth: any) => {
-    const response = await axios.get(`${apiUrl}api/myself/`, {
-      headers: { Authorization: `JWT ${token}` },
-    })
+export const fetchAsyncProf = createAsyncThunk("login/get", async () => {
+  const response = await axios.get(`${apiUrl}api/myself/`, {
+    headers: { Authorization: `JWT ${token}` },
+  })
 
-    return response.data
-  },
-)
+  return response.data
+})
 
 export const loginSlice = createSlice({
   name: "login",

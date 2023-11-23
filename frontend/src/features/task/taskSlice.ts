@@ -21,9 +21,12 @@ export type Task = {
 
 const initialState: TaskState = {
   tasks: [
-    { id: 3, title: "TASK C", created_at: "", updated_at: "" },
-    { id: 2, title: "TASK B", created_at: "", updated_at: "" },
-    { id: 1, title: "TASK A", created_at: "", updated_at: "" },
+    {
+      id: 0,
+      title: "",
+      created_at: "",
+      updated_at: "",
+    },
   ],
   editedTask: {
     id: 1,
@@ -42,7 +45,7 @@ const initialState: TaskState = {
 
 export const fetchAsyncTask = createAsyncThunk("task/get", async () => {
   const response = await axios.get(apiUrl, {
-    headers: { Authrization: `JWT ${token}` },
+    headers: { Authorization: `JWT ${token}` },
   })
   return response.data
 })
