@@ -1,8 +1,8 @@
 import React from "react"
-import { useAppDispatch } from "../../app/hooks"
-import { Task, completeTask, deleteTask } from "./taskSlice"
+import { useAppDispatch } from "../../../app/hooks"
+import { TaskBasic, completeTask, deleteTask } from "./taskBasicSlice"
 
-const TaskItem = ({ task }: { task: Task }) => {
+const TaskBasicItem = ({ task }: { task: TaskBasic }) => {
   const dispatch = useAppDispatch()
 
   return (
@@ -19,4 +19,4 @@ const TaskItem = ({ task }: { task: Task }) => {
   )
 }
 
-export default TaskItem
+export default TaskBasicItem

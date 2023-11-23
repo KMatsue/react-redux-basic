@@ -1,9 +1,9 @@
 import React from "react"
 
-import { useAppSelector } from "../../app/hooks"
-import { selectTasks } from "./taskSlice"
-import TaskItem from "./TaskItem"
-const TaskList: React.FC = () => {
+import { useAppSelector } from "../../../app/hooks"
+import { selectTasks } from "./taskBasicSlice"
+import TaskItem from "./TaskBasikItem"
+const TaskBasicList: React.FC = () => {
   const tasks = useAppSelector(selectTasks)
   return (
     <>
@@ -16,4 +16,4 @@ const TaskList: React.FC = () => {
   )
 }
 
-export default TaskList
+export default TaskBasicList

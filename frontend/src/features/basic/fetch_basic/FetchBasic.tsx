@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
-import { useAppSelector, useAppDispatch } from "../../app/hooks"
-import { User, fetchAsyncGet, selectUsers } from "./fetchSlice"
+import { useAppDispatch } from "../../../app/hooks"
+import { User, fetchAsyncGet, selectUsers } from "./fetchBasicSlice"
 import { useSelector } from "react-redux"
 
-const Fetch = () => {
+const FetchBasic = () => {
   const dispatch = useAppDispatch()
   const users = useSelector(selectUsers)
   useEffect(() => {
@@ -19,4 +19,4 @@ const Fetch = () => {
   )
 }
 
-export default Fetch
+export default FetchBasic

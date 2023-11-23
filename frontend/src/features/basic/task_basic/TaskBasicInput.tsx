@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { useAppDispatch } from "../../app/hooks"
-import { newTask } from "./taskSlice"
+import { useAppDispatch } from "../../../app/hooks"
+import { newTask } from "./taskBasicSlice"
 
-const TaskInput = () => {
+const TaskBasicInput = () => {
   const dispatch = useAppDispatch()
   const [editTitle, setEditTitle] = useState("")
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,4 +22,4 @@ const TaskInput = () => {
   )
 }
 
-export default TaskInput
+export default TaskBasicInput

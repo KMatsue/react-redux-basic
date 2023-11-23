@@ -1,13 +1,13 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
-import counterReducer from "../features/counter/counterSlice"
-import taskReducer from "../features/task/taskSlice"
-import fetchReducer from "../features/fetch/fetchSlice"
+import counterReducer from "../features/basic/counter/counterSlice"
+import taskBasicReducer from "../features/basic/task_basic/taskBasicSlice"
+import fetchBasicReducer from "../features/basic/fetch_basic/fetchBasicSlice"
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    task: taskReducer,
-    fetch: fetchReducer,
+    taskBasic: taskBasicReducer,
+    fetchBasic: fetchBasicReducer,
   },
 })
 
