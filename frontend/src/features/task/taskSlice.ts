@@ -15,8 +15,8 @@ export interface TaskState {
 export type Task = {
   id: number
   title: string
-  created_at: string
-  updated_at: string
+  created_at?: string
+  updated_at?: string
 }
 
 const initialState: TaskState = {
@@ -50,22 +50,25 @@ export const fetchAsyncTask = createAsyncThunk("task/get", async () => {
   return response.data
 })
 
-export const createAsyncTask = createAsyncThunk("task/post", async (task) => {
-  const response = await axios.post(apiUrl, task, {
-    headers: {
-      "Content-Type": "application/json",
-      Authrization: `JWT ${token}`,
-    },
-  })
-  return response.data
-})
+export const createAsyncTask = createAsyncThunk(
+  "task/post",
+  async (task: Task) => {
+    const response = await axios.post(apiUrl, task, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `JWT ${token}`,
+      },
+    })
+    return response.data
+  },
+)
 export const updateAsyncTask = createAsyncThunk(
   "task/put",
   async (task: Task) => {
-    const response = await axios.put(`${apiUrl}${task.id}`, task, {
+    const response = await axios.put(`${apiUrl}${task.id}/`, task, {
       headers: {
         "Content-Type": "application/json",
-        Authrization: `JWT ${token}`,
+        Authorization: `JWT ${token}`,
       },
     })
     return response.data
@@ -78,7 +81,7 @@ export const deleteAsyncTask = createAsyncThunk(
     await axios.delete(`${apiUrl}${id}`, {
       headers: {
         "Content-Type": "application/json",
-        Authrization: `JWT ${token}`,
+        Authorization: `JWT ${token}`,
       },
     })
     return id
