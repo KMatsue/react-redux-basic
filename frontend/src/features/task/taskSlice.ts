@@ -137,8 +137,8 @@ export const taskSlice = createSlice({
 
 export const { editTask, selectTask } = taskSlice.actions
 
-export const selectedTasks = (state: RootState) => state.task.selectedTask
-export const editedTasks = (state: RootState) => state.task.editedTask
+export const selectSelectedTask = (state: RootState) => state.task.selectedTask
+export const selectEditedTask = (state: RootState) => state.task.editedTask
 export const selectTasks = (state: RootState) => state.task.tasks
 
 // We can also write thunks by hand, which may contain both sync and async logic.
